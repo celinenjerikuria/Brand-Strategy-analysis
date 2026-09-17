@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 CSV_PATH = Path(__file__).resolve().parent / "products_asos.csv"
+SUMMARY_PATH = Path(__file__).resolve().parent / "brand_summary.csv"
 
 
 def get_brand(text):
@@ -100,6 +101,7 @@ def summarize_by_brand(df_clean):
     brand_summary = brand_summary[brand_summary["product_count"] > 10].sort_values(
         "lost_revenue", ascending=False
     )
+    brand_summary.to_csv(SUMMARY_PATH, index=False)
     print(brand_summary.head(5))
     return brand_summary
 
