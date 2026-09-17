@@ -147,8 +147,8 @@ def plot_brand_strategy(df_clean):
     plt.ylabel("Stockout Rate")
     plt.axvline(x=40, color="red", linestyle="--")
     plt.axhline(y=0.4, color="red", linestyle="--")
-    plt.show()
-    plt.savefig("brand_strategy_analysis.png", dpi=300)
+    plt.savefig("brand_strategy_analysis.png", dpi=150, bbox_inches="tight")
+    plt.close()
 
 
 def main():
